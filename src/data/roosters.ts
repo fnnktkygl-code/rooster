@@ -2,6 +2,7 @@ import type { Rooster } from '../types';
 
 export const roosters: Rooster[] = [
   { lang: 'Français', flag: '🇫🇷', countryCode: 'fr', text: 'cocorico', ipa: '[kɔ.kɔ.ʁi.ˈko]', region: 'Europe', ttsText: 'co-co-ri-COOOOOOOOO!!!' },
+  { lang: 'English (US)', flag: '🇺🇸', countryCode: 'us', text: 'cock-a-doodle-doo', ipa: '[ˌkɑːk.ə.ˈduː.dl̩.ˌduː]', region: 'Americas', ttsText: 'cock-a-doodle-DOOOOOOOO!!!' },
   { lang: 'Espagnol (Europe)', flag: '🇪🇸', countryCode: 'es', text: 'quiquiriquí', ipa: '[ˌki.ki.ɾi.ˈki]', region: 'Europe', ttsText: 'ki-ki-ri-KIIIIIIII!!!' },
   { lang: 'Espagnol (LatAm)', flag: '🌎', countryCode: null, text: 'cocorocó', ipa: '[ˌko.ko.ɾo.ˈko]', region: 'Americas', ttsText: 'co-co-ro-CÓOOOOOOO!!!' },
   { lang: 'Italien', flag: '🇮🇹', countryCode: 'it', text: 'chicchirichì', ipa: '[ˌkik.ki.ri.ˈki]', region: 'Europe', ttsText: 'chic-chi-ri-CHÌIIIIIIII!!!' },
