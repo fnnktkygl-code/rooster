@@ -5,15 +5,6 @@ import { roosters as allRoosters } from '../data/roosters';
 
 const REGIONS = ['All', 'Europe', 'Americas', 'Asia', 'MiddleEast', 'Africa'] as const;
 
-const REGION_COLORS: Record<string, string> = {
-  All: 'var(--gold)',
-  Europe: 'var(--region-europe)',
-  Americas: 'var(--region-americas)',
-  Asia: 'var(--region-asia)',
-  MiddleEast: 'var(--region-middleeast)',
-  Africa: 'var(--region-africa)',
-};
-
 interface LanguageGridProps {
   region: string;
   search: string;
