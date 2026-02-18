@@ -1,18 +1,18 @@
 /* ═══ Theme Variables ═══ */
 :root {
   --gold: #C9A84C;
-  --gold-dim: rgba(201, 168, 76, 0.5);
-  --gold-faint: rgba(201, 168, 76, 0.12);
+  --gold-dim: #947a36;
+  --gold-faint: rgba(201, 168, 76, 0.08);
   --bg: #080604;
-  --bg-card: rgba(255, 255, 255, 0.024);
-  --bg-elevated: rgba(255, 255, 255, 0.035);
-  --bg-modal: #110e07;
+  --bg-card: #0c0a08;
+  --bg-elevated: #110e0c;
+  --bg-modal: #0c0a08;
   --text: #F5EDD6;
-  --text-dim: rgba(245, 237, 214, 0.38);
-  --text-faint: rgba(245, 237, 214, 0.18);
-  --text-muted: rgba(245, 237, 214, 0.5);
-  --border: rgba(255, 255, 255, 0.06);
-  --border-gold: rgba(201, 168, 76, 0.25);
+  --text-dim: #716b64;
+  --text-faint: #423e3a;
+  --text-muted: #a19a91;
+  --border: rgba(255, 255, 255, 0.04);
+  --border-gold: rgba(201, 168, 76, 0.15);
   --green: #4ade80;
   --red: #ef4444;
   --region-europe: #818cf8;

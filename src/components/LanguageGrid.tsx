@@ -56,7 +56,6 @@ export const LanguageGrid = memo(function LanguageGrid({
         flexWrap: 'wrap', alignItems: 'center',
       }}>
         {REGIONS.map(r => {
-          const col = REGION_COLORS[r];
           const sel = region === r;
           return (
             <button
@@ -64,12 +63,13 @@ export const LanguageGrid = memo(function LanguageGrid({
               onClick={() => onRegionChange(r)}
               aria-pressed={sel}
               style={{
-                background: sel ? `color-mix(in srgb, ${col} 10%, transparent)` : 'rgba(255,255,255,.03)',
-                border: `1px solid ${sel ? `color-mix(in srgb, ${col} 33%, transparent)` : 'rgba(255,255,255,.07)'}`,
-                color: sel ? col : 'var(--text-dim)',
-                borderRadius: 'var(--radius-full)', padding: '5px 13px',
-                fontSize: 10, fontFamily: 'var(--font-mono)',
-                letterSpacing: '.1em', transition: 'all .16s ease',
+                background: sel ? 'rgba(201,168,76,0.1)' : 'rgba(255,255,255,.02)',
+                border: `1px solid ${sel ? 'rgba(201,168,76,0.3)' : 'rgba(255,255,255,.06)'}`,
+                color: sel ? 'var(--gold)' : 'var(--text-dim)',
+                borderRadius: 'var(--radius-full)', padding: '6px 14px',
+                fontSize: 9, fontFamily: 'var(--font-mono)',
+                letterSpacing: '.06em', transition: 'all .2s ease',
+                cursor: 'pointer',
               }}
             >
               {r === 'MiddleEast' ? 'MIDDLE EAST' : r.toUpperCase()}

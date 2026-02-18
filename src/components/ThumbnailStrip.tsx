@@ -11,7 +11,7 @@ interface ThumbnailItemProps {
 
 const ThumbnailItem = memo(function ThumbnailItem({ rooster, idx, selected, onClick }: ThumbnailItemProps) {
   const handleClick = useCallback(() => onClick(idx), [onClick, idx]);
-  const size = selected ? 68 : 54;
+  const size = selected ? 74 : 58;
 
   return (
     <button
@@ -20,43 +20,48 @@ const ThumbnailItem = memo(function ThumbnailItem({ rooster, idx, selected, onCl
       aria-pressed={selected}
       style={{
         flexShrink: 0, textAlign: 'center',
-        opacity: selected ? 1 : 0.52,
-        transform: selected ? 'scale(1.06)' : 'scale(0.94)',
-        transition: 'all .22s cubic-bezier(.34,1.56,.64,1)',
+        opacity: selected ? 1 : 0.45,
+        transform: selected ? 'scale(1.1)' : 'scale(1)',
+        transition: 'all .3s cubic-bezier(.34,1.56,.64,1)',
         padding: 0, background: 'none',
+        cursor: 'pointer',
       }}
     >
       <div style={{
         width: size, height: size, borderRadius: '50%',
-        border: `2.5px solid ${selected ? 'var(--gold)' : 'rgba(255,255,255,0.18)'}`,
+        border: `2px solid ${selected ? 'var(--gold)' : 'rgba(255,255,255,0.1)'}`,
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        overflow: 'hidden', marginBottom: 6,
+        overflow: 'hidden', marginBottom: 10,
         background: selected
-          ? 'radial-gradient(circle at 38% 32%, hsl(28,72%,44%) 0%, hsl(20,62%,15%) 60%, hsl(12,50%,8%) 100%)'
-          : 'radial-gradient(circle, hsl(28,50%,20%) 0%, hsl(20,40%,10%) 100%)',
+          ? 'radial-gradient(circle at center, rgba(201,168,76,0.3) 0%, rgba(0,0,0,0.8) 100%)'
+          : 'rgba(255,255,255,0.03)',
         boxShadow: selected
-          ? '0 0 0 3px rgba(201,168,76,0.2), 0 6px 24px rgba(0,0,0,0.7)'
-          : '0 3px 12px rgba(0,0,0,0.5)',
-        transition: 'all .22s ease',
+          ? '0 0 20px rgba(201,168,76,0.2), inset 0 0 15px rgba(201,168,76,0.1)'
+          : 'none',
+        transition: 'all .3s ease',
         position: 'relative',
       }}>
-        <Flag countryCode={rooster.countryCode} emoji={rooster.flag} size={size * 0.5} />
+        {/* Placeholder for rooster image - using Flag as fallback */}
+        <div style={{ transform: `scale(${selected ? 1.2 : 1})`, transition: 'transform 0.3s ease' }}>
+          <Flag countryCode={rooster.countryCode} emoji={rooster.flag} size={size * 0.55} />
+        </div>
+
         {selected && (
           <div style={{
-            position: 'absolute', inset: -4, borderRadius: '50%',
-            border: '2px solid rgba(201,168,76,0.5)',
-            animation: 'pulse 2s ease-in-out infinite',
-            pointerEvents: 'none',
+            position: 'absolute', inset: -2, borderRadius: '50%',
+            border: '1.5px solid var(--gold)',
+            opacity: 0.5,
           }} />
         )}
       </div>
       <div style={{
-        fontFamily: 'var(--font-mono)', fontSize: selected ? 8.5 : 7.5,
-        color: selected ? 'var(--gold)' : 'var(--text-faint)',
-        letterSpacing: '.08em', textTransform: 'uppercase',
+        fontFamily: 'var(--font-mono)', fontSize: 9,
+        color: selected ? 'var(--gold)' : 'var(--text-dim)',
+        letterSpacing: '.1em', textTransform: 'uppercase',
         whiteSpace: 'nowrap', fontWeight: selected ? 600 : 400,
+        transition: 'color 0.3s ease',
       }}>
-        {rooster.lang.split(' ')[0].slice(0, 9)}
+        {rooster.lang.split(' ')[0]}
       </div>
     </button>
   );
